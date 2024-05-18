@@ -1,0 +1,518 @@
+:root {
+  /* Primary */
+  --LimeGreen: hsl(163, 72%, 41%);
+  --BrightRed: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(
+    225deg,
+    #df4896 0%,
+    #ee877e 50.91%,
+    #fdc366 100%
+  );
+  --YouTube: hsl(348, 97%, 39%);
+
+  /* Dark Theme */
+  --ToggleDark: linear-gradient(225deg, #40db82 0%, #388fe7 98.02%);
+  --VeryDarkBlue: hsl(230, 17%, 14%); /*(BG)*/
+  --VeryDarkBlue: hsl(232, 19%, 15%); /*(Top BG Pattern)*/
+  --DarkDesaturatedBlue: hsl(228, 28%, 20%); /*(Card BG)*/
+  --DesaturatedBlue: hsl(228, 34%, 66%); /*(Text)*/
+  --White: hsl(0, 0%, 100%);
+
+  /* Light Theme */
+  --ToggleLight: hsl(230, 22%, 74%);
+  --VeryPaleBlue: hsl(225, 100%, 98%); /*(Top BG Pattern)*/
+  --LightGrayishBlue: hsl(227, 47%, 96%); /*(Card BG)*/
+  --DarkGrayishBlue: hsl(228, 12%, 44%); /*(Text)*/
+  --VeryDarkBlue: hsl(230, 17%, 14%); /*(Text)*/
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  box-sizing: border-box;
+}
+
+/* Smooth scroll */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+* {
+  margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  padding: 0 24px;
+  background-color: var(--White);
+}
+
+header {
+  max-width: 1110px;
+  margin: 36px auto 0;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 235px;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  background: #f7f9ff;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-heading {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #1d1f29;
+  margin-bottom: 4px;
+}
+
+.main-paragraph {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #63687d;
+}
+
+hr {
+  height: 1px;
+  background: #848bab;
+  margin: 1.5rem 0 1rem;
+}
+
+.switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper-1,
+.wrapper-2,
+.wrapper-3 {
+  display: grid;
+  place-items: center;
+}
+
+.wrapper-1 {
+  gap: 30px;
+  max-width: 1110px;
+  margin: 40px auto 46px;
+}
+
+.wrapper-2 {
+  max-width: 1110px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+.wrapper-3 {
+  max-width: 1110px;
+  margin: 0 auto 45px;
+}
+
+.wrapper-2,
+.wrapper-3 {
+  gap: 16px;
+}
+
+.center-heading {
+  max-width: 1110px;
+  margin: 0 auto 27px;
+}
+
+.sec-heading {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #63687d;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: #f1f3fa;
+  border-radius: 5px;
+  padding: 2rem 1.5rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.box:hover {
+  background: #e1e4f0;
+}
+
+.facebook {
+  border-top: 4px solid var(--Facebook);
+}
+
+.twitter {
+  border-top: 4px solid var(--Twitter);
+}
+
+.instagram {
+  border-top: 4px solid var(--BrightRed);
+}
+
+.youtube {
+  border-top: 4px solid var(--YouTube);
+}
+
+.icon-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.username {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #63687d;
+}
+
+.stat {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 86%;
+  letter-spacing: -2px;
+  color: #1d1f29;
+}
+
+.uppercase {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #63687d;
+}
+
+.day {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--LimeGreen);
+}
+
+.day-red {
+  color: var(--BrightRed);
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  margin-top: 30px;
+}
+
+.icon-stats {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 25px;
+}
+
+.box-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f1f3fa;
+  border-radius: 5px;
+  width: 100%;
+  gap: 23px;
+  padding: 26px 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #63687d;
+}
+
+.views {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #1d1f29;
+}
+
+.box-2:hover {
+  background: #e1e4f0;
+}
+
+.title-icon {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.views-stats {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.icon-percentage {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 827px) {
+  header::before {
+    height: 244px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    grid-template-columns: 1fr;
+  }
+
+  .main-heading {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .switcher {
+    gap: 13px;
+  }
+
+  .wrapper-1,
+  .wrapper-2,
+  .wrapper-3 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .wrapper-2,
+  .wrapper-3 {
+    gap: 30px;
+  }
+
+  .wrapper-1 {
+    margin: 46px auto;
+  }
+
+  .wrapper-2 {
+    margin: 0 auto 24px;
+  }
+
+  .wrapper-3 {
+    margin: 0 auto 75px;
+  }
+
+  .center-heading {
+    margin: 0 auto 24px;
+  }
+
+  hr {
+    display: none;
+  }
+}
+
+/* switch settings 👇 */
+
+.ui-switch {
+  /* switch */
+  --switch-bg: rgb(135, 150, 165);
+  --switch-width: 48px;
+  --switch-height: 20px;
+  /* circle */
+  --circle-diameter: 32px;
+  --circle-bg: rgb(0, 56, 146);
+  --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
+}
+
+.ui-switch input {
+  display: none;
+}
+
+.slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--switch-bg);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider .circle {
+  top: calc(var(--circle-inset) * -1);
+  left: 0;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  position: absolute;
+  background: var(--circle-bg);
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTkuMzA1IDEuNjY3VjMuNzVoMS4zODlWMS42NjdoLTEuMzl6bS00LjcwNyAxLjk1bC0uOTgyLjk4Mkw1LjA5IDYuMDcybC45ODItLjk4Mi0xLjQ3My0xLjQ3M3ptMTAuODAyIDBMMTMuOTI3IDUuMDlsLjk4Mi45ODIgMS40NzMtMS40NzMtLjk4Mi0uOTgyek0xMCA1LjEzOWE0Ljg3MiA0Ljg3MiAwIDAwLTQuODYyIDQuODZBNC44NzIgNC44NzIgMCAwMDEwIDE0Ljg2MiA0Ljg3MiA0Ljg3MiAwIDAwMTQuODYgMTAgNC44NzIgNC44NzIgMCAwMDEwIDUuMTM5em0wIDEuMzg5QTMuNDYyIDMuNDYyIDAgMDExMy40NzEgMTBhMy40NjIgMy40NjIgMCAwMS0zLjQ3MyAzLjQ3MkEzLjQ2MiAzLjQ2MiAwIDAxNi41MjcgMTAgMy40NjIgMy40NjIgMCAwMTEwIDYuNTI4ek0xLjY2NSA5LjMwNXYxLjM5aDIuMDgzdi0xLjM5SDEuNjY2em0xNC41ODMgMHYxLjM5aDIuMDg0di0xLjM5aC0yLjA4NHpNNS4wOSAxMy45MjhMMy42MTYgMTUuNGwuOTgyLjk4MiAxLjQ3My0xLjQ3My0uOTgyLS45ODJ6bTkuODIgMGwtLjk4Mi45ODIgMS40NzMgMS40NzMuOTgyLS45ODItMS40NzMtMS40NzN6TTkuMzA1IDE2LjI1djIuMDgzaDEuMzg5VjE2LjI1aC0xLjM5eiIgLz4KPC9zdmc+");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.slider .circle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: inherit;
+  -webkit-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+  opacity: 0;
+}
+
+/* actions */
+
+.ui-switch input:checked + .slider .circle {
+  left: calc(100% - var(--circle-diameter));
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
+}
+
+.ui-switch input:active + .slider .circle::before {
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
