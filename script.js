@@ -35,4 +35,12 @@ darkModeToggle.addEventListener("click", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   loadTheme(getCurrentTheme());
+  let theme = getCurrentTheme();
+  if (theme === "dark") {
+    theme = "light";
+    toogleName.textContent = "Light Mode";
+  } else {
+    theme = "dark";
+    toogleName.textContent = "Dark Mode";
+  }
 });
