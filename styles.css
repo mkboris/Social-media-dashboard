@@ -52,6 +52,24 @@
   }
 }
 
+[color-scheme="dark"] {
+  --body: var(--body-dark);
+  --text1: var(--text1-dark);
+  --text2: var(--text2-dark);
+  --top-bg: var(--top-bg-dark);
+  --card-bg: var(--card-bg-dark);
+  --card-hover: var(--card-hover-dark);
+}
+
+[color-scheme="light"] {
+  --body: var(--body-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+  --top-bg: var(--top-bg-light);
+  --card-bg: var(--card-bg-light);
+  --card-hover: var(--card-hover-light);
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -269,8 +287,8 @@ hr {
   transition: all 0.3s;
 }
 
-.box:hover,
-.box-2:hover {
+.box:is(:hover, :focus),
+.box-2:is(:hover, :focus) {
   background: var(--card-hover);
 }
 
