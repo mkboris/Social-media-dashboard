@@ -414,7 +414,15 @@ a {
   text-decoration: none;
 }
 
-@media screen and (min-width: 51.6875rem) {
+@media screen and (min-width: 35rem) {
+  .wrapper-1,
+  .wrapper-2,
+  .wrapper-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 55.625rem) {
   header::before {
     height: 15.25rem;
   }
